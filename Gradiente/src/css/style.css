@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.gradient {
+    width: 100vw;
+    height: 100vh; /* Corrigido para 100vh */
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    --turn: 0turn;
+    animation: rotate 20s linear infinite;
+    background: conic-gradient(from var(--turn, 0turn),
+        #e17ba1 25%,
+        #6297c7 25%,
+        #98c3ec 50%,
+        #bde0fe 50%,
+        #bde0fe 75%,
+        #d6aaef 75%);
+    background-position: center center;
+    --ofset-x: calc(var(--x) * 1px);
+    --ofset-y: calc(var(--y) * 1px);
+    background-position: calc(100% + var(--ofset-x, -50%)) calc(100% + var(--ofset-y, -50%));
+    background-size: 200% 200%;
+}
+@keyframes rotate {
+        from {
+            --turn: 0turn;
+        }
+        to {
+            --turn: 1turn;
+        }
+}
+body {
+display: grid;
+place-items: center;
+min-height: 100vh;
+cursor: crosshair;
+overflow: hidden;
+}
+h1 {
+font-family: Lilita;
+font-weight: 800;
+font-size: 22vw;
+mix-blend-mode: overlay;
+line-height: 1;
+background: linear-gradient(rgb(230, 18, 18) 15%, rgb(66, 28, 28), rgb(219, 213, 213), rgb(150, 18, 99) 95%);
+background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 5;
+}
